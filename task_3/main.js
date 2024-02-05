@@ -1,20 +1,3 @@
-// const array = ["Tom","bob",3,4];
-// console.log(array[40])
-
-// let person = {
-//    name: "Tom",
-//    age: 18,
-//    hobbies: ["Кушать", "Спать", "Просмотр кино"],
-//    contacts: {
-//     phone: 88005552332,
-//     email: "tom@example.com",
-//     social: "www.github.com"
-//    }
-// }
-// console.log(`Имя - ${person["name"]}. Возраст - ${person["age"]}`);
-// console.log(person["hobbies"][2])
-// console.log(person["contacts"]["social"])
-
 let college = [
     {
         name: "harry",
@@ -71,5 +54,8 @@ if ( college[0]["isStudent"] === true ) {
         console.log(`Студент ${college[0]["name"]} не получает стипендию.`);
     }
 } else if ( college[0]["isStudent"] === false ) {
-    console.log("Преподаватель")
+    console.log(`Вы выбрали студента ${college[0]["name"]}`);
+    if ( college[0]["isKurator"] === true ) {
+        console.log(`Преподаватель ${college[0]["name"]} куратор группы ${college[0][kuratorGroup]} `);
+    }
 }
