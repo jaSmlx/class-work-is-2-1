@@ -39,23 +39,24 @@ let college = [
     },
 ];
 
-if ( college[0]["isStudent"] === true ) {
-    console.log(`Вы выбрали студента ${college[0]["name"]}`);
-    if ( college[0]["age"] >= 18 ) {
-        console.log(`Студент ${college[0]["name"]} совершеннолетний. Ему ${college[0]["age"]}`);
+let person = college[3];
+
+if (person.isStudent) {
+    console.log(`Вы выбрали студента ${person.name}`);
+
+    if (person.age >= 18) {
+        console.log(`Студент ${person.name} совершеннолетний. Ему ${person.age}`);
     } else {
-        console.log(`Студент ${college[0]["name"]} не совершеннолетний. Ему ${college[0]["age"]}`);
+        console.log(`Студент ${person.name} не совершеннолетний. Ему ${person.age}`);
     }
-    if (college[0]["cash"] >= 4500 ) {
-        console.log(`Студент ${college[0]["name"]} получает повышенную стипендию. (${college[0]["cash"]} руб.)`);
-    } else if ( college[0]["cash"] <= 4400 || college[0]["cash"] >= 1) {
-        console.log(`Студент ${college[0]["name"]} получает обычную стипендию. (${college[0]["cash"]} руб.)`);
-    } else if  ( college[0]["cash"] == 0 ) {
-        console.log(`Студент ${college[0]["name"]} не получает стипендию.`);
+    if (person.cash >= 4500) {
+        console.log(`Студент ${person.name} получает повышенную стипендию. (${person.cash} руб.)`);
+    } else if (person.cash <= 4400 || person.cash >= 1) {
+        console.log(`Студент ${person.name} получает обычную стипендию. (${person.cash} руб.)`);
+    } else if (person.cash === 0) {
+        console.log(`Студент ${person.name} не получает стипендию.`);
     }
-} else if ( college[0]["isStudent"] === false ) {
-    console.log(`Вы выбрали студента ${college[0]["name"]}`);
-    if ( college[0]["isKurator"] === true ) {
-        console.log(`Преподаватель ${college[0]["name"]} куратор группы ${college[0][kuratorGroup]} `);
-    }
+} else if (!person.isStudent || person.isKurator) {
+    console.log(`Вы выбрали преподавателя ${person.name}`);
+    console.log(`Преподаватель ${person.name} куратор группы ${person.kuratorGroup}`);
 }
